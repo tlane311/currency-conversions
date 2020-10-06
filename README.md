@@ -1,3 +1,3 @@
-# Converts Curriencies
+# Converts Currencies
 
-This is a single page app built with react using [Currency Exchange](https://rapidapi.com/fyhao/api/currency-exchange).
+This is a single page app built with reactjs using [Currency Exchange](https://rapidapi.com/fyhao/api/currency-exchange).
