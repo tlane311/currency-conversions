@@ -1,0 +1,68 @@
+input, select {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+         box-sizing: border-box;
+}
+
+.conversion-table{
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction:column;
+}
+
+    .conversion-table form{
+        display: flex;
+        height: 25vh;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+        .conversion-table form input {
+            text-align:center;
+            width: 60vw;
+            height: 10vh;
+            border-radius: 15px;
+            font-size:40px;  
+        }
+
+        .conversion-table form select {
+            width: 60vw;
+            height: 10vh;
+            padding: 0 0 0 16vw;
+            border-radius: 15px;
+            font-size:40px;
+            background-color:slategrey;
+            color: whitesmoke;
+        }
+
+.arrow {
+    display:flex;
+    align-items: flex-end;
+}
+
+.arrow div{
+    border-radius: 24px;
+}
+.arrow .down {
+    width: 8px;
+    height: 16vh;
+    background-color: black;
+    margin-bottom: 12px;
+}
+
+.arrow .left {
+    width: 8px;
+    height: 32px;
+    background-color: black;
+    transform: rotate(-45deg);
+    margin-right:1px;
+}
+.arrow .right {
+    width: 8px;
+    height: 32px;
+    background-color: black;
+    transform: rotate(45deg);
+    margin-left:1px;
+}
