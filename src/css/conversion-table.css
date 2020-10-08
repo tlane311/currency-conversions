@@ -1,3 +1,9 @@
+:root {
+    --responsive-font-size: min(40px, 5vh);
+    --responsive-box-width: min(60vw, 650px);  
+    --responsive-arrow-thickness: 8px;
+}
+
 input, select {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -21,20 +27,23 @@ input, select {
 
         .conversion-table form input {
             text-align:center;
-            width: 60vw;
+            width: var(--responsive-box-width);
             height: 10vh;
             border-radius: 15px;
-            font-size:40px;  
+            font-size: var(--responsive-font-size);  
+            color: var(--dark-color);
+            background-color: var(--light-color);
+            box-shadow: inset 1px 3px 3px 3px rgba(0,0,0,0.5);
         }
 
         .conversion-table form select {
-            width: 60vw;
+            width: var(--responsive-box-width);
             height: 10vh;
-            padding: 0 0 0 16vw;
+            padding: 0 0 0 calc(0.5*var(--responsive-box-width) - 1.5*var(--responsive-font-size)); /*26vw >=1050px 25vw >=750px*/
             border-radius: 15px;
-            font-size:40px;
-            background-color:slategrey;
-            color: whitesmoke;
+            font-size: var(--responsive-font-size);
+            background-color: var(--other-medium-color);
+            color:var(--light-color)
         }
 
 .arrow {
@@ -44,25 +53,24 @@ input, select {
 
 .arrow div{
     border-radius: 24px;
+    background-color: var(--accent-color);
+    
 }
 .arrow .down {
     width: 8px;
     height: 16vh;
-    background-color: black;
     margin-bottom: 12px;
 }
 
 .arrow .left {
     width: 8px;
     height: 32px;
-    background-color: black;
     transform: rotate(-45deg);
     margin-right:1px;
 }
 .arrow .right {
     width: 8px;
     height: 32px;
-    background-color: black;
     transform: rotate(45deg);
     margin-left:1px;
 }

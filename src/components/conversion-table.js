@@ -66,14 +66,11 @@ export function ConversionTable() {
     }, [initialCurrency, finalCurrency])
     
     useEffect( () => {
+        //to make the conversions more readable we format the ouputs to remove excessive decimals if input amount is greater than 1
         function formatNumber(number){
-            if (Number.isInteger(number)) return number;
-            if (number.toString().length > 8) return number.toExponential(3)
             const decimals = number - Number.parseInt(number);
-            if (number > 99) return Number.parseInt(number) + Number.parseFloat(decimals.toFixed(2));
-            if (number < 100 && decimals.toString().length > 5){
-                return Number.parseInt(number) + Number.parseFloat(decimals.toFixed(5));
-            }
+            if (Number.isInteger(number)) return number;
+            if (number > 1) return Number.parseInt(number) + Number.parseFloat(decimals.toFixed(2));
             return number;
         }
 
@@ -94,6 +91,7 @@ export function ConversionTable() {
                 <input 
                     id="initial-amount" 
                     type="number"
+                    min="0"
                     placeholder={0.00}
                     value={input}     
                     onChange={event => setHiddenAmount(parseFloat(event.target.value)) }               
@@ -112,6 +110,7 @@ export function ConversionTable() {
                 <input 
                     id="final-amount" 
                     type="number"
+                    min="0"
                     placeholder={0.00}
                     value={output}     
                     onChange= {event => setHiddenAmount(parseFloat(event.target.value)/conversionFactor)}     
